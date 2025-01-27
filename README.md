@@ -33,18 +33,63 @@ Here "odoo18" is a database username and "postgres" is otheruser of ubuntu 24.04
 ```
 su postgres
 ```
-#### Step #8:reset password of Psql database user "odoo18"
+#### Step #8: Reset the password of Psql database user "odoo18"
 ```
 ALTER ROLL odoo18 WITH PASSWORD '2wsx9ijn';
 ```
 Here 'odoo18' is database username and '2wsx9ijn' is password
-after reset password perss clt+z and enter exit,exit to go root user
+after resetting the password press clt+z and enter exit, exit to go root user
 
-#### Creature a directory and a User of odoo18
+#### Step #9: Creature a directory and a User of odoo18
 ```
 sudo useradd -m -d /opt/odoo18 -U -r -s /bin/bash odoo18
 ```
 after creating a Directory 'odoo18' to go to the directory 
 ```
 cd /opt/odoo18
-``
+```
+#### Step #10: Clone git into the 'opt/odoo18' directory
+```
+git clone https://www.github.com/odoo/odoo --depth 1 --branch 18.0 --single-branch odoo
+```
+Here 'odoo' is a directory into the 'odoo18' directory
+This link helps to clone Odoo '18' version
+
+#### Step #11:Installing virtual environment for not mixing other odoo or versions
+```
+sudo apt install python3-venv
+```
+#### Step #12: Create a virtual environment of 'odoo'
+```
+cd /opt/odoo18
+```
+to go to the odoo18 directory and make a virtual environment of odoo-venv
+```
+python3 -m venv odoo-venv 
+```
+Here 'odoo-venv' is a virtual environment name you can choose any name
+
+#### Step #13:Active virtual directory to this directory /opt/odoo18
+```
+source odoo-venv/bin/activate
+```
+#### Step #14: Install all pachages of Odoo
+```
+pip install -r odoo/requirements.txt
+```
+#### Step #15: Edit odoo.conf file from '/opt/odoo18/odoo/debian'
+```
+/opt/odoo18/odoo/debian
+```
+nano odoo.conf
+```
+[options]
+; This is the password that allows database operations:
+; admin_passwd = admin
+db_host = False
+db_port = False
+db_user = odoo
+db_password = False
+;addons_path = /usr/lib/python3/dist-packages/odoo/addons
+default_productivity_apps = True
+
