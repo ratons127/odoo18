@@ -85,7 +85,7 @@ pip install -r odoo/requirements.txt
 nano odoo.conf
 ```
 edit this script
-"
+```
 [options]
 ; This is the password that allows database operations:
 ; admin_passwd = admin
@@ -95,7 +95,8 @@ db_user = odoo
 db_password = False
 ;addons_path = /usr/lib/python3/dist-packages/odoo/addons
 default_productivity_apps = True
-"
+```
+```
 to this
 ; This is the password that allows database operations:
 ; admin_passwd = admin
@@ -106,7 +107,7 @@ db_password = 2wsx9ijn
 addons_path = /opt/odoo18/odoo/addons
 default_productivity_apps = True
 xmlrpc_port = 8069
-
+```
 ### Step #16: switch user 'root' to 'odoo18' and active virtual directory 
 
 ```
