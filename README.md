@@ -96,8 +96,8 @@ db_password = False
 ;addons_path = /usr/lib/python3/dist-packages/odoo/addons
 default_productivity_apps = True
 ```
+to change this
 ```
-to this
 ; This is the password that allows database operations:
 ; admin_passwd = admin
 db_host = False
