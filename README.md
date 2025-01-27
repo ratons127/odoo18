@@ -84,6 +84,8 @@ pip install -r odoo/requirements.txt
 ```
 nano odoo.conf
 ```
+edit this script
+"
 [options]
 ; This is the password that allows database operations:
 ; admin_passwd = admin
@@ -93,4 +95,37 @@ db_user = odoo
 db_password = False
 ;addons_path = /usr/lib/python3/dist-packages/odoo/addons
 default_productivity_apps = True
+"
+to this
+; This is the password that allows database operations:
+; admin_passwd = admin
+db_host = False
+db_port = False
+db_user = odoo18
+db_password = 2wsx9ijn
+addons_path = /opt/odoo18/odoo/addons
+default_productivity_apps = True
+xmlrpc_port = 8069
 
+#### Step #16: switch user 'root' to 'odoo18' and active virtual directory 
+
+```
+sudo su odoo18
+```
+```
+source odoo-venv/bin/activate 
+```
+/opt/odoo18/odoo
+
+#### Step #17: Run odoo "/opt/odoo18/odoo"
+
+```
+python3 odoo-bin -c dbian/odoo.conf
+```
+
+#### Step #18: Access your odoo server 
+```
+yourdomain:8069
+```
+yourip:8069
+```
