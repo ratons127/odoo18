@@ -11,3 +11,8 @@ sudo apt-get upgrade
 ```
 python3 --version
 ```
+#### Step #3: Install packages and libraries(install git, python3-pip other nesesary file)
+```
+sudo apt install git python3-pip libldap2-dev libpq-dev libsasl2-dev
+```
+
