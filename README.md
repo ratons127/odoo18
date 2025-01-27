@@ -81,6 +81,7 @@ pip install -r odoo/requirements.txt
 ```
 /opt/odoo18/odoo/debian
 ```
+```
 nano odoo.conf
 ```
 [options]
