@@ -40,8 +40,11 @@ ALTER ROLL odoo18 WITH PASSWORD '2wsx9ijn';
 Here 'odoo18' is database username and '2wsx9ijn' is password
 after reset password perss clt+z and enter exit,exit to go root user
 
-#### Step #9:we need to creature a directory and a User of odoo18
+#### Creature a directory and a User of odoo18
 ```
 sudo useradd -m -d /opt/odoo18 -U -r -s /bin/bash odoo18
 ```
-
+after creating a Directory 'odoo18' to go to the directory 
+```
+cd /opt/odoo18
+``
