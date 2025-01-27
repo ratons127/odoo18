@@ -130,5 +130,6 @@ python3 odoo-bin -c dbian/odoo.conf
 ```
 yourdomain:8069
 ```
+```
 yourip:8069
 ```
