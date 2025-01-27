@@ -6,7 +6,7 @@ odoo install in Ubuntu 24.04 LTS
 ```bash
 sudo apt-get update
 sudo apt-get upgrade
-
+<br>
 ## Step 2: Check the version of python3
 ```bash
 python3 --version
