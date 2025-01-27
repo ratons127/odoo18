@@ -38,7 +38,8 @@ su postgres
 ALTER ROLL odoo18 WITH PASSWORD '2wsx9ijn';
 ```
 Here 'odoo18' is database username and '2wsx9ijn' is password
-after resetting the password press clt+z and enter exit, exit to go root user
+<be>
+After resetting the password press clt+z and enter exit, exit to go root user
 
 ### Step #9: Creature a directory and a User of odoo18
 ```
@@ -53,6 +54,7 @@ cd /opt/odoo18
 git clone https://www.github.com/odoo/odoo --depth 1 --branch 18.0 --single-branch odoo
 ```
 Here 'odoo' is a directory into the 'odoo18' directory
+<be>
 This link helps to clone Odoo '18' version
 
 ### Step #11:Installing virtual environment for not mixing other odoo or versions
