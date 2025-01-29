@@ -5,7 +5,7 @@ odoo install in Ubuntu 24.04 LTS
 ### Step #1: Update the server
 ```
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 ```
 ### Step #2: check version of the python3 
 ```
