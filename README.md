@@ -21,6 +21,9 @@ sudo apt install postgresql postgresql-client
 ```
 ### Step #5: Check the status of the PostgreSQL service
 ```
+sudo systemctl enable PostgreSQL
+```
+```
 sudo systemctl status postgresql
 ```
 ### Step #6:create user of database
@@ -84,7 +87,7 @@ pip install -r odoo/requirements.txt
 ```
 ### Step #15: Edit odoo.conf file from '/opt/odoo18/odoo/debian'
 ```
-/opt/odoo18/odoo/debian
+cd /opt/odoo18/odoo/debian
 ```
 ```
 nano odoo.conf
