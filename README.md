@@ -33,9 +33,12 @@ Here "odoo18" is a database username and "postgres" is otheruser of ubuntu 24.04
 ```
 su postgres
 ```
-### Step #8: Reset the password of Psql database user "odoo18"
+### Step #8: Reset the password of PSQL database user "odoo18"
 ```
-ALTER ROLL odoo18 WITH PASSWORD '2wsx9ijn';
+psql
+```
+```
+ALTER USER odoo18 WITH PASSWORD '2wsx9ijn';
 ```
 Here 'odoo18' is database username and '2wsx9ijn' is password
 <be>
