@@ -129,7 +129,7 @@ source odoo-venv/bin/activate
 ### Step #17: Run odoo "/opt/odoo18/odoo"
 
 ```
-python3 odoo-bin -c dbian/odoo.conf
+python3 odoo-bin -c debian/odoo.conf
 ```
 
 ### Step #18: Access your odoo server 
