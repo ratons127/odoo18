@@ -21,7 +21,7 @@ sudo apt install postgresql postgresql-client
 ```
 ### Step #5: Check the status of the PostgreSQL service
 ```
-sudo systemctl enable PostgreSQL
+sudo systemctl enable postgresql
 ```
 ```
 sudo systemctl status postgresql
