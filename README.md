@@ -139,3 +139,102 @@ yourdomain:8069
 ```
 yourip:8069
 ```
+<br>
+<br>
+<br>
+
+### Step #19:  Install Apache and Required Modules)
+
+```
+sudo apt install apache2 -y
+sudo a2enmod proxy proxy_http proxy_balancer lbmethod_byrequests rewrite headers ssl
+sudo systemctl restart apache2
+```
+>Enable Apache to start on boot:
+```
+sudo systemctl enable apache2
+sudo systemctl restart apache2
+```
+### Step #20: Create an Apache Virtual Host Configuration for Odoo
+
+```
+sudo nano /etc/apache2/sites-available/odoo18.conf
+```
+Add the following content:
+```
+<VirtualHost *:80>
+    ServerName bbs.raton.live
+
+    ProxyRequests Off
+    ProxyPass / http://127.0.0.1:8069/
+    ProxyPassReverse / http://127.0.0.1:8069/
+
+    <Proxy *>
+        Require all granted
+    </Proxy>
+
+    ErrorLog ${APACHE_LOG_DIR}/bbs_error.log
+    CustomLog ${APACHE_LOG_DIR}/bbs_access.log combined
+</VirtualHost>
+```
+### Step #21:Enable the Configuration and Restart Apache
+```
+sudo a2dissite 000-default.conf
+sudo a2ensite bbs.raton.live.conf
+ systemctl reload apache2
+````
+### Step #22:Allow Traffic on Port 80 (ufw)
+```
+sudo ufw start
+sudo ufw enable
+sudo ufw allow 80/tcp
+sudo ufw allow 8069/tcp
+sudo ufw reload
+```
+
+### Step #22: Let's fix your SSL issue for bbs.raton.live Follow these steps:
+>Install Let's Encrypt Certbot for Apache:
+
+```
+sudo apt update
+sudo apt install certbot python3-certbot-apache -y
+```
+
+### Step #23:Obtain SSL Certificate
+
+```
+sudo certbot --apache -d bbs.raton.live -d www.bbs.raton.live
+```
+Restart Apache:
+```
+sudo systemctl restart apache2
+```
+### Verify SSL
+```
+sudo certbot certificates
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
