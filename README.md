@@ -17,7 +17,7 @@ sudo apt install git python3-pip libldap2-dev libpq-dev libsasl2-dev
 ```
 ### Step #4: odoo apr system needs a database, odoo works with PostgreSQL 
 ```
-sudo apt install postgresql postgresql-client
+sudo apt install postgresql postgresql-client -y
 ```
 ### Step #5: Check the status of the PostgreSQL service
 ```
@@ -65,7 +65,7 @@ This link helps to clone Odoo '18' version
 
 ### Step #11:Installing virtual environment for not mixing other odoo or versions
 ```
-sudo apt install python3-venv
+sudo apt install python3-venv -y
 ```
 ### Step #12: Create a virtual environment of 'odoo'
 ```
