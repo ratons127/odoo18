@@ -13,7 +13,7 @@ python3 --version
 ```
 ### Step #3: Install packages and libraries(install git, python3-pip other nesesary file)
 ```
-sudo apt install git python3-pip libldap2-dev libpq-dev libsasl2-dev
+sudo apt install git python3-pip libldap2-dev libpq-dev libsasl2-dev -y
 ```
 ### Step #4: odoo apr system needs a database, odoo works with PostgreSQL 
 ```
@@ -173,8 +173,8 @@ Add the following content:
         Require all granted
     </Proxy>
 
-    ErrorLog ${APACHE_LOG_DIR}/bbs_error.log
-    CustomLog ${APACHE_LOG_DIR}/bbs_access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/odoo18_error.log
+    CustomLog ${APACHE_LOG_DIR}/odoo18_access.log combined
 </VirtualHost>
 ```
 ### Step #21:Enable the Configuration and Restart Apache
