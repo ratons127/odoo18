@@ -124,10 +124,13 @@ sudo su odoo18
 ```
 source odoo-venv/bin/activate 
 ```
-/opt/odoo18/odoo
+```
+cd /opt/odoo18
+```
 
 ### Step #17: Run odoo "/opt/odoo18/odoo"
-
+```
+cd /opt/odoo18/odoo
 ```
 python3 odoo-bin -c debian/odoo.conf
 ```
@@ -180,15 +183,24 @@ Add the following content:
 ### Step #21:Enable the Configuration and Restart Apache
 ```
 sudo a2dissite 000-default.conf
+```
+```
 sudo a2ensite bbs.raton.live.conf
+```
+```
  systemctl reload apache2
 ````
 ### Step #22:Allow Traffic on Port 80 (ufw)
 ```
 sudo ufw start
 sudo ufw enable
+````
+````
 sudo ufw allow 80/tcp
 sudo ufw allow 8069/tcp
+sudo ufw allow 443/tcp
+sudo ufw allow 8443/tcp
+sudo ufw allow 22
 sudo ufw reload
 ```
 
