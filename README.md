@@ -16,10 +16,12 @@ python3 --version
 sudo apt install git python3-pip libldap2-dev libpq-dev libsasl2-dev -y
 ```
 ### Step #4: odoo apr system needs a database, odoo works with PostgreSQL 
+
 ```
 sudo apt install postgresql postgresql-client -y
 ```
 ### Step #5: Check the status of the PostgreSQL service
+
 ```
 sudo systemctl enable postgresql
 ```
@@ -33,10 +35,12 @@ su - postgres -c "createuser -s odoo18"
 Here "odoo18" is a database username and "postgres" is otheruser of ubuntu 24.04
 
 ### Step #7:Switch user root to postgres 
+
 ```
 su postgres
 ```
 ### Step #8: Reset the password of PSQL database user "odoo18"
+
 ```
 psql
 ```
@@ -48,6 +52,7 @@ Here 'odoo18' is database username and '2wsx9ijn' is password
 After resetting the password press clt+z and enter exit, exit to go root user
 
 ### Step #9: Creature a directory and a User of odoo18
+
 ```
 sudo useradd -m -d /opt/odoo18 -U -r -s /bin/bash odoo18
 ```
@@ -56,6 +61,7 @@ after creating a Directory 'odoo18' to go to the directory
 cd /opt/odoo18
 ```
 ### Step #10: Clone git into the 'opt/odoo18' directory
+
 ```
 git clone https://www.github.com/odoo/odoo --depth 1 --branch 18.0 --single-branch odoo
 ```
@@ -64,10 +70,12 @@ Here 'odoo' is a directory into the 'odoo18' directory
 This link helps to clone Odoo '18' version
 
 ### Step #11:Installing virtual environment for not mixing other odoo or versions
+
 ```
 sudo apt install python3-venv -y
 ```
 ### Step #12: Create a virtual environment of 'odoo'
+
 ```
 cd /opt/odoo18
 ```
@@ -78,14 +86,17 @@ python3 -m venv odoo-venv
 Here 'odoo-venv' is a virtual environment name you can choose any name
 
 ### Step #13:Active virtual directory to this directory /opt/odoo18
+
 ```
 source odoo-venv/bin/activate
 ```
 ### Step #14: Install all pachages of Odoo
+
 ```
 pip install -r odoo/requirements.txt
 ```
 ### Step #15: Edit odoo.conf file from '/opt/odoo18/odoo/debian'
+
 ```
 cd /opt/odoo18/odoo/debian
 ```
@@ -129,13 +140,16 @@ cd /opt/odoo18
 ```
 
 ### Step #17: Run odoo "/opt/odoo18/odoo"
+
 ```
 cd /opt/odoo18/odoo
+```
 ```
 python3 odoo-bin -c debian/odoo.conf
 ```
 
 ### Step #18: Access your odoo server 
+
 ```
 yourdomain:8069
 ```
@@ -154,6 +168,7 @@ sudo a2enmod proxy proxy_http proxy_balancer lbmethod_byrequests rewrite headers
 sudo systemctl restart apache2
 ```
 >Enable Apache to start on boot:
+
 ```
 sudo systemctl enable apache2
 sudo systemctl restart apache2
@@ -181,6 +196,7 @@ Add the following content:
 </VirtualHost>
 ```
 ### Step #21:Enable the Configuration and Restart Apache
+
 ```
 sudo a2dissite 000-default.conf
 ```
@@ -191,11 +207,12 @@ sudo a2ensite bbs.raton.live.conf
  systemctl reload apache2
 ````
 ### Step #22:Allow Traffic on Port 80 (ufw)
+
 ```
 sudo ufw start
 sudo ufw enable
-````
-````
+```
+```
 sudo ufw allow 80/tcp
 sudo ufw allow 8069/tcp
 sudo ufw allow 443/tcp
@@ -203,7 +220,6 @@ sudo ufw allow 8443/tcp
 sudo ufw allow 22
 sudo ufw reload
 ```
-
 ### Step #22: Let's fix your SSL issue for bbs.raton.live Follow these steps:
 >Install Let's Encrypt Certbot for Apache:
 
